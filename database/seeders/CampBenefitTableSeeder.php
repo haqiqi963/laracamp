@@ -15,19 +15,19 @@ class CampBenefitTableSeeder extends Seeder
         $campBenefits = [
             [
                 'camp_id' => 1,
-                'name' => 'From Zero to Hero'
+                'name' => 'Pro Techstack Kit'
             ],
             [
                 'camp_id' => 1,
-                'name' => 'Airpods Pro 2nd Gen'
+                'name' => 'iMac Pro 2021 & Display'
             ],
             [
                 'camp_id' => 1,
-                'name' => 'One on One Mentoring'
+                'name' => '1-1 Mentoring Program'
             ],
             [
                 'camp_id' => 1,
-                'name' => 'Certificates'
+                'name' => 'Final Project Certificate'
             ],
             [
                 'camp_id' => 1,
@@ -35,19 +35,27 @@ class CampBenefitTableSeeder extends Seeder
             ],
             [
                 'camp_id' => 1,
-                'name' => 'Future Job Opportunity'
+                'name' => 'Future Job Opportinity'
             ],
             [
                 'camp_id' => 1,
                 'name' => 'Premium Design Kit'
             ],
             [
+                'camp_id' => 1,
+                'name' => 'Website Builder'
+            ],
+            [
                 'camp_id' => 2,
-                'name' => 'One on One Mentoring'
+                'name' => '1-1 Mentoring Program'
             ],
             [
                 'camp_id' => 2,
                 'name' => 'Final Project Certificate'
+            ],
+            [
+                'camp_id' => 2,
+                'name' => 'Offline Course Videos'
             ],
             [
                 'camp_id' => 2,
