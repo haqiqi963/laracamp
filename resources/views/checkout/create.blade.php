@@ -33,11 +33,15 @@
                                 @csrf
                                 <div class="mb-4">
                                     <label for="exampleInputEmail1" class="form-label">Full Name</label>
-                                    <input type="text" class="form-control" id="exampleInputEmail1" name="name" aria-describedby="emailHelp">
+                                    <input type="text" class="form-control" id="exampleInputEmail1" name="name" value="{{ auth()->user()->name }}">
                                 </div>
                                 <div class="mb-4">
                                     <label class="form-label">Email Address</label>
-                                    <input type="email" class="form-control" name="email">
+                                    <input type="email" class="form-control" name="email" value="{{ auth()->user()->email }}">
+                                </div>
+                                <div class="mb-4">
+                                    <label class="form-label">Occupation</label>
+                                    <input type="text" class="form-control" name="occupation" value="{{ auth()->user()->occupation }}">
                                 </div>
                                 <div class="mb-4">
                                     <label class="form-label">Card Number</label>
@@ -47,7 +51,7 @@
                                     <div class="row">
                                         <div class="col-lg-6 col-12">
                                             <label class="form-label">Expired</label>
-                                            <input type="date" class="form-control" name="expired">
+                                            <input type="month" class="form-control" name="expired">
                                         </div>
                                         <div class="col-lg-6 col-12">
                                             <label class="form-label">CVC</label>
