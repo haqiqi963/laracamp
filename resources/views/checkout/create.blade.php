@@ -32,30 +32,36 @@
                             <form action="{{ route('checkout.store', $camp->id) }}" class="basic-form" method="post">
                                 @csrf
                                 <div class="mb-4">
-                                    <label for="exampleInputEmail1" class="form-label">Full Name</label>
-                                    <input type="text" class="form-control" id="exampleInputEmail1" name="name" value="{{ auth()->user()->name }}">
+                                    <label for="name" class="form-label">Full Name</label>
+                                    <input type="text" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" id="name" name="name" value="{{ auth()->user()->name }}">
+                                    @error('name') <small class="text-danger">{{ $message }}</small>@enderror
                                 </div>
                                 <div class="mb-4">
                                     <label class="form-label">Email Address</label>
-                                    <input type="email" class="form-control" name="email" value="{{ auth()->user()->email }}">
+                                    <input type="text" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" name="email" value="{{ auth()->user()->email }}">
+                                    @error('email') <small class="text-danger">{{ $message }}</small>@enderror
                                 </div>
                                 <div class="mb-4">
                                     <label class="form-label">Occupation</label>
-                                    <input type="text" class="form-control" name="occupation" value="{{ auth()->user()->occupation }}">
+                                    <input type="text" class="form-control {{ $errors->has('occupation') ? 'is-invalid' : '' }}" name="occupation" value="{{old('occupation') ?: auth()->user()->occupation }}">
+                                    @error('occupation') <small class="text-danger">{{ $message }}</small>@enderror
                                 </div>
                                 <div class="mb-4">
                                     <label class="form-label">Card Number</label>
-                                    <input type="number" class="form-control" name="card_number">
+                                    <input type="number" class="form-control {{ $errors->has('card_number') ? 'is-invalid' : '' }}" name="card_number" value="{{ old('card_number') ?: '' }}">
+                                    @error('card_number') <small class="text-danger">{{ $message }}</small>@enderror
                                 </div>
                                 <div class="mb-5">
                                     <div class="row">
                                         <div class="col-lg-6 col-12">
                                             <label class="form-label">Expired</label>
-                                            <input type="month" class="form-control" name="expired">
+                                            <input type="month" class="form-control {{ $errors->has('expired') ? 'is-invalid' : '' }}" name="expired">
+                                            @error('expired') <small class="text-danger">{{ $message }}</small>@enderror
                                         </div>
                                         <div class="col-lg-6 col-12">
                                             <label class="form-label">CVC</label>
-                                            <input type="number" class="form-control" name="cvc" maxlength="3">
+                                            <input type="number" class="form-control {{ $errors->has('cvc') ? 'is-invalid' : '' }}" name="cvc" maxlength="3">
+                                            @error('cvc') <small class="text-danger">{{ $message }}</small>@enderror
                                         </div>
                                     </div>
                                 </div>
