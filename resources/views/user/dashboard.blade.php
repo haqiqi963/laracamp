@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    {{$checkouts}}
     <section class="dashboard my-5">
         <div class="container">
             <div class="row text-left">
@@ -10,7 +11,7 @@
                     </p>
                     <h2 class="primary-header ">
                         My Bootcamps
-                    </h2>
+                        </h2>
                 </div>
             </div>
             <div class="row my-5">
@@ -27,7 +28,11 @@
                                         <strong>{{ $checkout->Camp->title }}</strong>
                                     </p>
                                     <p>
-                                        {{ $checkout->created_at->format('M d, Y') }}
+                                        @if ($checkout && $checkout->created_at)
+                                            {{ $checkout->created_at->format('M d, Y') }}
+                                        @else
+                                            N/A or some default value
+                                        @endif
                                     </p>
                                 </td>
                                 <td>
