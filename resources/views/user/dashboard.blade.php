@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    {{$checkouts}}
     <section class="dashboard my-5">
         <div class="container">
             <div class="row text-left">
